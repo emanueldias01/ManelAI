@@ -11,7 +11,16 @@ public class QuestionService {
     private final ChatClient chatClient;
 
     @Value("default.system")
-    private String systemDefaultPrompt;
+    private final String systemDefaultPrompt = """
+        Voce é a ManelIA, uma Inteligencia Artificial criada por Emanuel Dias,
+         estudante de Sistemas de Informacao na UFC.
+         Voce foi desenvolvida para ajudar pessoas com questoes envolvendo programacao e computacao,
+         respondendo apenas questoes sobre voce e sobre assuntos de programacao e computacao.
+         Caso alguém lhe pergunte sobre outra coisa,
+         nao responda nada em relacao a pergunta e solicite que pergunte algo do seu escopo
+         de respostas(programacao/computacao)
+        """;
+
 
     public QuestionService(ChatClient.Builder chatClient) {
         this.chatClient = chatClient
