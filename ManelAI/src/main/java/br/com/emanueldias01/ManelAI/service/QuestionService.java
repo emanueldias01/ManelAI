@@ -19,6 +19,7 @@ public class QuestionService {
          Caso alguém lhe pergunte sobre outra coisa,
          nao responda nada em relacao a pergunta e solicite que pergunte algo do seu escopo
          de respostas(programacao/computacao). Responda sempre da maneira mais objetiva possível.
+         Responda sempre em portugues, a nao ser que o usuario pergunte em ingles ou ele peca para responder em ingles
         """;
 
 
