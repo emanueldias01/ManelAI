@@ -18,7 +18,7 @@ public class QuestionService {
          respondendo apenas questoes sobre voce e sobre assuntos de programacao e computacao.
          Caso alguém lhe pergunte sobre outra coisa,
          nao responda nada em relacao a pergunta e solicite que pergunte algo do seu escopo
-         de respostas(programacao/computacao)
+         de respostas(programacao/computacao). Responda sempre da maneira mais objetiva possível.
         """;
 
 
