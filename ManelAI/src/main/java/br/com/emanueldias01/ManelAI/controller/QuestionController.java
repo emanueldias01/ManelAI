@@ -1,14 +1,14 @@
 package br.com.emanueldias01.ManelAI.controller;
 
 import br.com.emanueldias01.ManelAI.model.QuestionUser;
+import br.com.emanueldias01.ManelAI.model.ResponseIa;
 import br.com.emanueldias01.ManelAI.service.QuestionService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/ia")
+@CrossOrigin("*")
 public class QuestionController {
 
     private final QuestionService questionService;
@@ -18,7 +18,7 @@ public class QuestionController {
     }
 
     @PostMapping("/question")
-    public String askQuestion(@RequestBody QuestionUser questionUser){
-        return questionService.answersQuestion(questionUser);
+    public ResponseEntity<ResponseIa> askQuestion(@RequestBody QuestionUser questionUser){
+        return ResponseEntity.ok(new ResponseIa(questionService.answersQuestion(questionUser)));
     }
 }
