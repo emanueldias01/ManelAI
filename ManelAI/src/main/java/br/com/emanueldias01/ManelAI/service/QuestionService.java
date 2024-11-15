@@ -2,7 +2,6 @@ package br.com.emanueldias01.ManelAI.service;
 
 import br.com.emanueldias01.ManelAI.model.QuestionUser;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
