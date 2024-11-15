@@ -30,7 +30,7 @@ public class QuestionService {
 
     public Flux<String> answersQuestion(QuestionUser questionUser){
         return chatClient.prompt()
-                .user("me conte uma piada sobre computadores")
+                .user(questionUser.prompt())
                 .stream()
                 .content();
     }
