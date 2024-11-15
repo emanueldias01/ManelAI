@@ -10,7 +10,6 @@ public class QuestionService {
 
     private final ChatClient chatClient;
 
-    @Value("default.system")
     private final String systemDefaultPrompt = """
         Voce é a ManelIA, uma Inteligencia Artificial criada por Emanuel Dias,
          estudante de Sistemas de Informacao na UFC.
