@@ -4,6 +4,7 @@ import br.com.emanueldias01.ManelAI.model.QuestionUser;
 import br.com.emanueldias01.ManelAI.service.QuestionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 @RestController
 @RequestMapping("/ia")
@@ -17,7 +18,7 @@ public class QuestionController {
     }
 
     @PostMapping("/question")
-    public ResponseEntity<String> askQuestion(@RequestBody QuestionUser questionUser){
+    public ResponseEntity<Flux<String>> askQuestion(@RequestBody QuestionUser questionUser){
         return ResponseEntity.ok(questionService.answersQuestion(questionUser));
     }
 }

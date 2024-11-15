@@ -3,6 +3,7 @@ package br.com.emanueldias01.ManelAI.service;
 import br.com.emanueldias01.ManelAI.model.QuestionUser;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 
 @Service
 public class QuestionService {
@@ -27,10 +28,10 @@ public class QuestionService {
                 .build();
     }
 
-    public String answersQuestion(QuestionUser questionUser){
+    public Flux<String> answersQuestion(QuestionUser questionUser){
         return chatClient.prompt()
-                .user(questionUser.prompt())
-                .call()
+                .user("me conte uma piada sobre computadores")
+                .stream()
                 .content();
     }
 }
